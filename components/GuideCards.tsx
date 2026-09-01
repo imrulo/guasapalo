@@ -1,14 +1,24 @@
 import Link from "next/link";
+import { CopyLinkButton } from "@/components/CopyLinkButton";
 import { guides } from "@/lib/guides";
+import { guideCanonical } from "@/lib/share";
 
 export function GuideCards() {
   return (
     <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
       {guides.map((guide) => (
-        <li key={guide.slug}>
+        <li
+          key={guide.slug}
+          className="relative flex h-full min-h-52 flex-col border border-line bg-surface transition-colors duration-200 hover:border-amber"
+        >
+          <CopyLinkButton
+            url={guideCanonical(guide.slug)}
+            compact
+            className="absolute top-3 right-3 z-10"
+          />
           <Link
             href={`/guias/${guide.slug}`}
-            className="flex h-full min-h-52 flex-col border border-line bg-surface p-5 transition-colors duration-200 hover:border-amber sm:p-6"
+            className="flex h-full flex-col p-5 pr-16 sm:p-6 sm:pr-16"
           >
             <p className="text-[0.65rem] tracking-[0.2em] text-amber uppercase">
               {guide.kicker}

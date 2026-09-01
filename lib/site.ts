@@ -65,9 +65,12 @@ export function pageMeta({
     description,
     alternates: { canonical: url },
     openGraph: {
+      type: path.startsWith("/guias/") ? "article" : "website",
       title,
       description,
       url,
+      siteName: site.name,
+      locale: "es_ES",
       images: [
         {
           url: "/og.png",
