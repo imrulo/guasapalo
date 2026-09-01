@@ -3,13 +3,17 @@ import { site, waMessages } from "@/lib/site";
 import { Container } from "@/components/Container";
 import { WhatsAppCta } from "@/components/WhatsAppCta";
 
-const legal = [
+const content = [
   { href: "/guias", label: "Guías" },
   { href: "/sesion", label: "Sesión" },
   { href: "/mujeres", label: "Mujeres" },
   { href: "/faq", label: "FAQ" },
+] as const;
+
+const legal = [
   { href: "/aviso", label: "Aviso" },
   { href: "/privacidad", label: "Privacidad" },
+  { href: "/cookies", label: "Cookies" },
 ] as const;
 
 export function Footer() {
@@ -45,7 +49,7 @@ export function Footer() {
           </WhatsAppCta>
         </div>
         <div className="mt-12 flex flex-wrap gap-x-5 gap-y-2 border-t border-line pt-6">
-          {legal.map((item) => (
+          {content.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -55,6 +59,17 @@ export function Footer() {
             </Link>
           ))}
         </div>
+        <nav aria-label="Legal" className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
+          {legal.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="inline-flex min-h-11 items-center text-sm text-muted transition-colors duration-200 hover:text-cream"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
       </Container>
     </footer>
   );

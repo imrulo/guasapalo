@@ -10,7 +10,9 @@ export const site = {
   tagline: "Qué decir cuando se te tranca la lengua.",
   description:
     "Ganas a distancia. WhatsApp o cámara. Entrenamiento práctico de 45 minutos: qué decir, cómo dirigir, cómo no desaparecer. No es terapia. No hay PDF.",
-  email: null,
+  email: "[EMAIL]",
+  legalName: "[NOMBRE LEGAL]",
+  jurisdiction: "[PAÍS / JURISDICCIÓN]",
   priceSessionUsd: 69,
   pricePackUsd: 179,
   sessionMinutes: 45,
@@ -30,6 +32,7 @@ export const waMessages = {
   faq: "GUASA. Vi el FAQ. Quiero la sesión.",
   aviso: "GUASA. Vi el aviso. Quiero la sesión.",
   privacidad: "GUASA. Vi privacidad. Quiero hablar.",
+  cookies: "GUASA. Vi cookies. Quiero hablar.",
   notFound: "GUASA. Llegué al 404. Igual quiero la sesión.",
 } as const;
 
