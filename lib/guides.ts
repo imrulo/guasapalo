@@ -3,6 +3,7 @@ export type Guide = {
   title: string;
   kicker: string;
   description: string;
+  teaser: string;
   paragraphs: string[];
 };
 
@@ -13,6 +14,7 @@ export const guides: Guide[] = [
     kicker: "El blanco",
     description:
       "No es timidez de carácter. Es un músculo que nadie te entrenó: hablarle cuando ella está lejos y te pide voz.",
+    teaser: "Ella pide que le hables y el chat se queda en blanco.",
     paragraphs: [
       "Ella escribe: háblame. No “cuéntame el día”. Háblame. Y el pulgar se queda quieto encima del teclado.",
       "No es que no la desees. Eso ya lo sabes. Es que el deseo, a metros o a un océano, no se sostiene con la cara. Se sostiene con frases. Y las frases no salen.",
@@ -34,6 +36,7 @@ export const guides: Guide[] = [
     kicker: "El mapa",
     description:
       "Hacer, que ella haga, lo que te pasa, orden y cómo se siente. Un mapa de atención. No un guion sucio.",
+    teaser: "Sin mapa tiras todo de golpe o no entras.",
     paragraphs: [
       "Cuando se te tranca, no es que te falten ganas. Es que no sabes por qué puerta entrar. Entonces empujas todas a la vez, o ninguna.",
       "Hay cuatro. No son trucos. Son sitios donde poner la atención para no hablar en vacío.",
@@ -54,6 +57,7 @@ export const guides: Guide[] = [
     kicker: "El relleno",
     description:
       "El halago de postal suena a extraño. El deseo pide dirección, no decoración.",
+    teaser: "El halago de postal suena a extraño y apaga.",
     paragraphs: [
       "“Qué linda.” “Qué rica.” “Me encantas.” Tres postales. Cabén en cualquier chat. No caben en el momento en que ella pidió que le hablaras.",
       "El halago describe desde afuera. La pone en una vitrina. Ella ya sabe que está linda, o no le importa en esa hora. Lo que pide no es un espejo. Es que estés dentro. Que dirijas. Que no desaparezcas detrás de un piropo.",
@@ -74,6 +78,7 @@ export const guides: Guide[] = [
     kicker: "No desaparezcas",
     description:
       "Se acaba el chat o la llamada y te sales de la escena. Ella lo nota. La próxima cuesta más.",
+    teaser: "Se acaba y desapareces. La próxima cuesta más.",
     paragraphs: [
       "Se apaga la llamada. O el chat se queda quieto. Tú cierras la app como quien cierra un cuarto. Mañana, dices. Mañana es más difícil.",
       "El minuto después no es romance. Es continuidad. El cuerpo todavía está en lo que pasó. La cabeza ya se fue a la vergüenza, al análisis, al “lo habré hecho mal”. Ese salto es el que enfría la semana.",
@@ -94,10 +99,11 @@ export const guides: Guide[] = [
     kicker: "Dos músculos",
     description:
       "Escribir no es lo mismo que hablarle a un lente. No mezcles las herramientas. Entrena la que toca esta semana.",
+    teaser: "Escribir no es lo mismo que hablarle a un lente.",
     paragraphs: [
       "El chat te deja borrar. La cámara, no. Por eso muchos se sienten dioses en el teclado y se apagan cuando se prende el video. No es hipocresía. Son dos músculos.",
       "En el chat hay pausa. Puedes leer, cortar, mandar dos líneas en vez de doce. El peligro es el párrafo: te pones literario, te pones otro. Ella lee una voz que no es la tuya. Si en persona eres seco, el chat no te pide que te vuelvas poeta. Te pide que no desaparezcas.",
-      "En cámara hay cara, silencio, respiración. El peligro es el guion. Leés el teléfono con los ojos bajos. Se nota. El otro peligro es rellenar el silencio con risa nerviosa o con un “qué linda” dicho en voz alta, que enfría igual.",
+      "En cámara hay cara, silencio, respiración. El peligro es el guion. Lees el teléfono con los ojos bajos. Se nota. El otro peligro es rellenar el silencio con risa nerviosa o con un “qué linda” dicho en voz alta, que enfría igual.",
       "No se entrena igual. Si esta semana el terreno es WhatsApp, no ensayes un monólogo para el lente. Si el terreno es video, no leas un texto pegado en la esquina de la pantalla. Cambia la herramienta, cambia la frase: más corta, más tuya, dicha, no recitada.",
       "El silencio en cámara no es fracaso. Es aire. En el chat, un silencio largo sí se lee como corte. Por eso el minuto después importa más por escrito: no hay cara que sostenga la espera. Aprende qué silencio es de cada medio.",
       "La luz, la camiseta, el ángulo: sirven de poco si la voz se va. Esto no es un tutorial de set. Es más simple y más duro: mira a donde ella está, no al recuadro de tu cara. Habla como le hablarías si el teléfono pesara menos que el momento.",

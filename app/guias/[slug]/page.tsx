@@ -57,7 +57,7 @@ export default async function GuidePage({ params }: GuideParams) {
           <p className="font-display text-2xl text-cream">
             Si te trancas esta semana, GUASA al WhatsApp.
           </p>
-          <WhatsAppCta message={message} className="mt-6">
+          <WhatsAppCta message={message} className="mt-6 min-h-14 w-full max-w-md px-8 text-base">
             Escribir GUASA
           </WhatsAppCta>
         </div>

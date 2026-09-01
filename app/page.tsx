@@ -1,5 +1,6 @@
-import Link from "next/link";
+import { ButtonLink } from "@/components/ButtonLink";
 import { FaqList } from "@/components/FaqList";
+import { GuideCards } from "@/components/GuideCards";
 import { PriceCards, PriceNote } from "@/components/PriceCards";
 import { Container } from "@/components/Container";
 import { Eyebrow, Section } from "@/components/Section";
@@ -63,27 +64,40 @@ export default function Home() {
   return (
     <>
       <section className="lamp relative overflow-hidden">
-        <Container className="flex min-h-[78vh] flex-col justify-end pb-16 pt-20 sm:pb-24 sm:pt-28">
+        <Container className="pb-10 pt-12 sm:pb-14 sm:pt-16">
           <p className="rise text-xs font-medium tracking-[0.28em] text-amber uppercase">
             Guasap + echar un palo
           </p>
-          <h1 className="rise mt-5 max-w-3xl font-display text-5xl leading-[0.95] text-cream sm:text-6xl md:text-8xl">
+          <h1 className="rise mt-4 max-w-3xl font-display text-4xl leading-[0.95] text-cream sm:text-6xl md:text-7xl">
             ¿Qué es guasapalo?
           </h1>
-          <p className="rise mt-8 max-w-lg text-lg leading-relaxed text-muted sm:text-xl">
+          <p className="rise mt-5 max-w-lg text-base leading-relaxed text-muted sm:text-xl">
             Ganas. WhatsApp o cámara. Ella lejos. Te pide que le hables y se te
             tranca la lengua.
           </p>
-          <div className="rise mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+          <div className="rise mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
             <WhatsAppCta message={waMessages.home} className="min-h-12 px-7">
-              Escribir GUASA por WhatsApp
+              Escribir GUASA
             </WhatsAppCta>
-            <p className="text-sm text-muted">
-              No tienes que contar tu vida. Con la palabra alcanza.
-            </p>
+            <ButtonLink href="/guias" variant="line" className="min-h-12">
+              Leer las guías
+            </ButtonLink>
           </div>
+          <p className="rise mt-4 text-sm text-muted">
+            No tienes que contar tu vida. Con la palabra alcanza.
+          </p>
         </Container>
       </section>
+
+      <Section id="guias" className="border-t border-line pt-10 sm:pt-14">
+        <Eyebrow>Dos caminos</Eyebrow>
+        <h2 className="mt-3 max-w-xl font-display text-3xl text-cream sm:text-4xl">
+          Empieza por una guía. O escribe GUASA.
+        </h2>
+        <div className="mt-8">
+          <GuideCards />
+        </div>
+      </Section>
 
       <Section className="border-t border-line">
         <p className="max-w-2xl font-display text-2xl leading-snug text-cream sm:text-3xl">
@@ -137,8 +151,8 @@ export default function Home() {
               Sales con algo que te quepa en la boca. No con un personaje. No
               con un archivo para reenviar.
             </p>
-            <WhatsAppCta message={waMessages.sesion} className="mt-8">
-              Hablar por WhatsApp
+            <WhatsAppCta message={waMessages.sesion} className="mt-8 min-h-12">
+              Escribir GUASA
             </WhatsAppCta>
           </div>
         </div>
@@ -185,12 +199,9 @@ export default function Home() {
               Corto
             </h2>
           </div>
-          <Link
-            href="/faq"
-            className="inline-flex min-h-11 items-center text-sm text-muted underline decoration-line underline-offset-4 hover:text-cream"
-          >
+          <ButtonLink href="/faq" variant="line">
             Ver todas
-          </Link>
+          </ButtonLink>
         </div>
         <FaqList items={homeFaq} />
       </Section>
@@ -200,8 +211,8 @@ export default function Home() {
           Si esta semana se te tranca, no hace falta un discurso.
         </p>
         <p className="mt-4 text-muted">Escribes GUASA. Con la palabra alcanza.</p>
-        <WhatsAppCta message={waMessages.home} className="mt-8 min-h-12">
-          Escribir GUASA por WhatsApp
+        <WhatsAppCta message={waMessages.home} className="mt-8 min-h-14 px-8">
+          Escribir GUASA
         </WhatsAppCta>
       </Section>
     </>

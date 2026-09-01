@@ -55,7 +55,7 @@ export default function AvisoPage() {
             </article>
           ))}
         </div>
-        <WhatsAppCta message={waMessages.aviso} className="mt-14">
+        <WhatsAppCta message={waMessages.aviso} className="mt-14 min-h-12">
           Entendido. Escribir GUASA
         </WhatsAppCta>
       </Section>

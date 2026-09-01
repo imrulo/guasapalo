@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ButtonLink } from "@/components/ButtonLink";
 import { Eyebrow, PageTitle, Section } from "@/components/Section";
 import { WhatsAppCta } from "@/components/WhatsAppCta";
 import { waMessages } from "@/lib/site";
@@ -11,17 +11,15 @@ export default function NotFound() {
         Esta página no está. El chat sí.
       </PageTitle>
       <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
-        Te saliste del mapa. GUASA alcanza igual. No hace falta volver a
-        buscar el link correcto.
+        Te saliste del mapa. GUASA alcanza igual. O entra por las guías.
       </p>
-      <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-        <WhatsAppCta message={waMessages.notFound}>Escribir GUASA</WhatsAppCta>
-        <Link
-          href="/"
-          className="inline-flex min-h-11 items-center text-sm text-muted underline decoration-line underline-offset-4 hover:text-cream"
-        >
-          Volver al inicio
-        </Link>
+      <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+        <WhatsAppCta message={waMessages.notFound} className="min-h-12">
+          Escribir GUASA
+        </WhatsAppCta>
+        <ButtonLink href="/guias" variant="line">
+          Leer las guías
+        </ButtonLink>
       </div>
     </Section>
   );

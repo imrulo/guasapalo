@@ -46,8 +46,8 @@ export function waMessageForGuide(title: string): string {
 }
 
 export const nav = [
-  { href: "/sesion", label: "Sesión" },
   { href: "/guias", label: "Guías" },
+  { href: "/sesion", label: "Sesión" },
 ] as const;
 
 export function pageMeta({

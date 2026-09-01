@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Grain } from "@/components/Grain";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { MobileTabBar } from "@/components/MobileTabBar";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -74,6 +75,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   colorScheme: "dark",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -96,6 +98,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main id="contenido">{children}</main>
         <Footer />
         <WhatsAppFloat />
+        <MobileTabBar />
       </body>
     </html>
   );

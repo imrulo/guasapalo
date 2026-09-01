@@ -55,8 +55,8 @@ export default function PrivacidadPage() {
             </article>
           ))}
         </div>
-        <WhatsAppCta message={waMessages.privacidad} className="mt-14">
-          Escribir por WhatsApp
+        <WhatsAppCta message={waMessages.privacidad} className="mt-14 min-h-12">
+          Escribir GUASA
         </WhatsAppCta>
       </Section>
     </>

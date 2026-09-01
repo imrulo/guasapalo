@@ -25,8 +25,8 @@ export default function FaqPage() {
       </Section>
       <Section className="border-t border-line">
         <FaqList items={fullFaq} />
-        <WhatsAppCta message={waMessages.faq} className="mt-12">
-          Seguir por WhatsApp
+        <WhatsAppCta message={waMessages.faq} className="mt-12 min-h-12">
+          Escribir GUASA
         </WhatsAppCta>
       </Section>
     </>
