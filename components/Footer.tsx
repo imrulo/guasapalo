@@ -6,6 +6,7 @@ import { WhatsAppCta } from "@/components/WhatsAppCta";
 const legal = [
   { href: "/guias", label: "Guías" },
   { href: "/sesion", label: "Sesión" },
+  { href: "/mujeres", label: "Mujeres" },
   { href: "/faq", label: "FAQ" },
   { href: "/aviso", label: "Aviso" },
   { href: "/privacidad", label: "Privacidad" },

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { guides } from "@/lib/guides";
 import { site } from "@/lib/site";
+import { womenGuides } from "@/lib/women-guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -8,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/sesion",
     "/guias",
+    "/mujeres",
     "/faq",
     "/aviso",
     "/privacidad",
@@ -25,5 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...guideRoutes];
+  const womenRoutes = womenGuides.map((guide) => ({
+    url: `${site.url}/mujeres/${guide.slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...guideRoutes, ...womenRoutes];
 }

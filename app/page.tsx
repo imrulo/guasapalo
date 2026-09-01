@@ -215,6 +215,20 @@ export default function Home() {
           Escribir GUASA
         </WhatsAppCta>
       </Section>
+
+      <Section className="border-t border-line bg-night-2">
+        <Eyebrow>Ella</Eyebrow>
+        <h2 className="mt-4 max-w-xl font-display text-3xl text-cream sm:text-4xl">
+          ¿Eres ella y no sabes pedirlo sin que se asuste?
+        </h2>
+        <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted">
+          El hombre dirige. Tú pides y sostienes. Hay una línea aparte, sin
+          mezclar el héroe de él. +18. No es terapia. No hay PDF.
+        </p>
+        <ButtonLink href="/mujeres" variant="line" className="mt-8">
+          Guías para ellas
+        </ButtonLink>
+      </Section>
     </>
   );
 }

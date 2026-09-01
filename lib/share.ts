@@ -1,23 +1,31 @@
 import { site } from "@/lib/site";
 
-export function guideCanonical(slug: string): string {
-  return `${site.url}/guias/${slug}`;
+export function articleCanonical(path: string): string {
+  return `${site.url}${path}`;
 }
 
-export function guideShareText(title: string, slug: string): string {
-  return `Lee esto: ${title} — ${guideCanonical(slug)}\nEntra a guasapalo.com`;
+export function articleShareText(title: string, path: string): string {
+  return `Lee esto: ${title} — ${articleCanonical(path)}\nEntra a guasapalo.com`;
 }
 
-export function whatsappArticleShareUrl(title: string, slug: string): string {
-  return `https://wa.me/?text=${encodeURIComponent(guideShareText(title, slug))}`;
+export function whatsappArticleShareUrl(title: string, path: string): string {
+  return `https://wa.me/?text=${encodeURIComponent(articleShareText(title, path))}`;
 }
 
-export function xShareUrl(title: string, slug: string): string {
-  const url = guideCanonical(slug);
+export function xShareUrl(title: string, path: string): string {
+  const url = articleCanonical(path);
   const text = `Lee esto: ${title}`;
   return `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
 }
 
-export function facebookShareUrl(slug: string): string {
-  return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(guideCanonical(slug))}`;
+export function facebookShareUrl(path: string): string {
+  return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(articleCanonical(path))}`;
+}
+
+export function guideCanonical(slug: string): string {
+  return articleCanonical(`/guias/${slug}`);
+}
+
+export function womenGuideCanonical(slug: string): string {
+  return articleCanonical(`/mujeres/${slug}`);
 }

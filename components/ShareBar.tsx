@@ -4,16 +4,17 @@ import { useSyncExternalStore } from "react";
 import { CopyLinkButton } from "@/components/CopyLinkButton";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import {
+  articleCanonical,
+  articleShareText,
   facebookShareUrl,
-  guideCanonical,
-  guideShareText,
   whatsappArticleShareUrl,
   xShareUrl,
 } from "@/lib/share";
 
 type ShareBarProps = {
   title: string;
-  slug: string;
+  path: string;
+  heading?: string;
 };
 
 const btn =
@@ -31,14 +32,18 @@ function getShareServerSnapshot() {
   return false;
 }
 
-export function ShareBar({ title, slug }: ShareBarProps) {
+export function ShareBar({
+  title,
+  path,
+  heading = "Mándalo a un pana",
+}: ShareBarProps) {
   const canNativeShare = useSyncExternalStore(
     subscribe,
     getShareSnapshot,
     getShareServerSnapshot,
   );
-  const url = guideCanonical(slug);
-  const text = guideShareText(title, slug);
+  const url = articleCanonical(path);
+  const text = articleShareText(title, path);
 
   async function nativeShare() {
     try {
@@ -55,12 +60,12 @@ export function ShareBar({ title, slug }: ShareBarProps) {
   return (
     <div>
       <p className="text-xs font-medium tracking-[0.18em] text-amber uppercase">
-        Mándalo a un pana
+        {heading}
       </p>
       <ul className="mt-3 flex flex-wrap gap-2">
         <li>
           <a
-            href={whatsappArticleShareUrl(title, slug)}
+            href={whatsappArticleShareUrl(title, path)}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Compartir por WhatsApp"
@@ -72,7 +77,7 @@ export function ShareBar({ title, slug }: ShareBarProps) {
         </li>
         <li>
           <a
-            href={xShareUrl(title, slug)}
+            href={xShareUrl(title, path)}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Compartir en X"
@@ -84,7 +89,7 @@ export function ShareBar({ title, slug }: ShareBarProps) {
         </li>
         <li>
           <a
-            href={facebookShareUrl(slug)}
+            href={facebookShareUrl(path)}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Compartir en Facebook"

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Eyebrow, PageTitle, Section } from "@/components/Section";
 import { WhatsAppCta } from "@/components/WhatsAppCta";
 import { pageMeta, waMessages } from "@/lib/site";
@@ -44,6 +45,15 @@ export default function AvisoPage() {
         <PageTitle className="mt-4 max-w-3xl">Aviso</PageTitle>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
           Leerlo no es un trámite de letra chica. Es el borde del trabajo.
+        </p>
+        <p className="mt-4 max-w-xl text-sm text-muted">
+          También hay guías para ellas.{" "}
+          <Link
+            href="/mujeres"
+            className="font-medium text-cream underline decoration-amber/70 underline-offset-4 hover:text-amber"
+          >
+            /mujeres
+          </Link>
         </p>
       </Section>
       <Section className="border-t border-line">

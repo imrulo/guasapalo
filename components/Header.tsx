@@ -17,7 +17,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="inline-flex min-h-11 items-center px-2.5 text-sm font-medium text-cream transition-colors duration-200 hover:text-amber sm:px-3"
+              className="inline-flex min-h-11 items-center px-2 text-sm font-medium text-cream transition-colors duration-200 hover:text-amber sm:px-3"
             >
               {item.label}
             </Link>

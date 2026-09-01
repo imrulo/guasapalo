@@ -26,6 +26,7 @@ export const waMessages = {
   sesion: "GUASA. Vi /sesion. Quiero agendar la sesión de 45 min.",
   pack: "GUASA. Vi guasapalo.com. Quiero el pack de 3 sesiones.",
   guias: "GUASA. Leí las guías. Esta semana se me tranca. Quiero la sesión.",
+  mujeres: "PIDE. Vi /mujeres. Quiero la sesión.",
   faq: "GUASA. Vi el FAQ. Quiero la sesión.",
   aviso: "GUASA. Vi el aviso. Quiero la sesión.",
   privacidad: "GUASA. Vi privacidad. Quiero hablar.",
@@ -45,9 +46,17 @@ export function waMessageForGuide(title: string): string {
   return `GUASA. Leí la guía "${title}". Quiero la sesión.`;
 }
 
+export function waMessageForWomen(slug?: string): string {
+  if (slug) {
+    return `PIDE. Vi /mujeres/${slug}. Quiero la sesión.`;
+  }
+  return waMessages.mujeres;
+}
+
 export const nav = [
   { href: "/guias", label: "Guías" },
   { href: "/sesion", label: "Sesión" },
+  { href: "/mujeres", label: "Mujeres" },
 ] as const;
 
 export function pageMeta({
@@ -65,7 +74,10 @@ export function pageMeta({
     description,
     alternates: { canonical: url },
     openGraph: {
-      type: path.startsWith("/guias/") ? "article" : "website",
+      type:
+        path.startsWith("/guias/") || path.startsWith("/mujeres/")
+          ? "article"
+          : "website",
       title,
       description,
       url,

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PriceCards, PriceNote } from "@/components/PriceCards";
 import { Eyebrow, PageTitle, Section } from "@/components/Section";
 import { WhatsAppCta } from "@/components/WhatsAppCta";
@@ -48,7 +49,6 @@ const excludes = [
   "PDF, descargas, grabación para reenviar",
   "Terapia, diagnóstico, trabajo de trauma",
   "Seguimiento eterno ni grupo",
-  "Oferta para mujeres en esta versión",
 ] as const;
 
 export default function SesionPage() {
@@ -66,6 +66,15 @@ export default function SesionPage() {
         <WhatsAppCta message={waMessages.sesion} className="mt-8 min-h-12">
           Quiero la sesión · {site.priceSessionUsd} USD
         </WhatsAppCta>
+        <p className="mt-6 max-w-xl text-sm text-muted">
+          También hay guías para ellas.{" "}
+          <Link
+            href="/mujeres"
+            className="font-medium text-cream underline decoration-amber/70 underline-offset-4 hover:text-amber"
+          >
+            /mujeres
+          </Link>
+        </p>
       </Section>
 
       <Section className="border-t border-line bg-night-2">

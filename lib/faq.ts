@@ -26,7 +26,7 @@ export const fullFaq: FaqItem[] = [
   ...homeFaq,
   {
     q: "¿Para quién es esto?",
-    a: "Hombres hispanohablantes, +18, con relación a distancia o sexo por chat/cámara, que se traban cuando ella pide que le hablen. Esta versión no es una oferta para mujeres.",
+    a: "Hombres hispanohablantes, +18, que se traban cuando ella pide que le hablen. Si eres ella, hay una línea aparte en /mujeres. Se escribe PIDE. Misma sesión, se trabaja cómo pedir.",
   },
   {
     q: "¿Qué preparo para la sesión?",

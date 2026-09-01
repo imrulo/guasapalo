@@ -2,36 +2,37 @@ import { notFound } from "next/navigation";
 import { ShareBar } from "@/components/ShareBar";
 import { Eyebrow, PageTitle, Section } from "@/components/Section";
 import { WhatsAppCta } from "@/components/WhatsAppCta";
-import { getGuide, guides } from "@/lib/guides";
-import { pageMeta, waMessageForGuide } from "@/lib/site";
+import { getWomenGuide, womenGuides } from "@/lib/women-guides";
+import { pageMeta, waMessageForWomen } from "@/lib/site";
 
-type GuideParams = PageProps<"/guias/[slug]">;
+type WomenGuideParams = PageProps<"/mujeres/[slug]">;
 
 export function generateStaticParams() {
-  return guides.map((guide) => ({ slug: guide.slug }));
+  return womenGuides.map((guide) => ({ slug: guide.slug }));
 }
 
-export async function generateMetadata({ params }: GuideParams) {
+export async function generateMetadata({ params }: WomenGuideParams) {
   const { slug } = await params;
-  const guide = getGuide(slug);
+  const guide = getWomenGuide(slug);
   if (!guide) {
     return {};
   }
   return pageMeta({
     title: guide.title,
     description: guide.description,
-    path: `/guias/${guide.slug}`,
+    path: `/mujeres/${guide.slug}`,
   });
 }
 
-export default async function GuidePage({ params }: GuideParams) {
+export default async function WomenGuidePage({ params }: WomenGuideParams) {
   const { slug } = await params;
-  const guide = getGuide(slug);
+  const guide = getWomenGuide(slug);
   if (!guide) {
     notFound();
   }
 
-  const sessionMessage = waMessageForGuide(guide.title);
+  const path = `/mujeres/${guide.slug}`;
+  const sessionMessage = waMessageForWomen(guide.slug);
 
   return (
     <>
@@ -42,7 +43,11 @@ export default async function GuidePage({ params }: GuideParams) {
           {guide.description}
         </p>
         <div className="mt-8 max-w-2xl">
-          <ShareBar title={guide.title} path={`/guias/${guide.slug}`} />
+          <ShareBar
+            title={guide.title}
+            path={path}
+            heading="Pásalo"
+          />
         </div>
       </Section>
 
@@ -58,15 +63,15 @@ export default async function GuidePage({ params }: GuideParams) {
           ))}
         </article>
         <div className="mt-14 max-w-2xl border-t border-line pt-10">
-          <ShareBar title={guide.title} path={`/guias/${guide.slug}`} />
+          <ShareBar title={guide.title} path={path} heading="Pásalo" />
           <p className="mt-10 font-display text-2xl text-cream">
-            Si te trancas esta semana, GUASA al WhatsApp.
+            Si esta semana no sabes pedirlo, PIDE al WhatsApp.
           </p>
           <WhatsAppCta
             message={sessionMessage}
             className="mt-6 min-h-14 w-full max-w-md px-8 text-base"
           >
-            Escribir GUASA
+            Escribir PIDE
           </WhatsAppCta>
         </div>
       </Section>
